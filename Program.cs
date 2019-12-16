@@ -18,15 +18,22 @@ namespace DataStructurePrograms.SinglyLinkedList
                 Console.WriteLine(" ::  1  :: LinkedList");
                 Console.WriteLine(" ::  2  :: Queue");
                 Console.WriteLine(" ::  3  :: Stack");
+                Console.WriteLine(" ::  4  :: prime number 1-1000");
+                Console.WriteLine(" ::  5  :: primeAnagram 1-1000");
+                Console.WriteLine(" ::  6  :: Calender ");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
                    
                     case 1:
-                        DoublyLinekdList.DoublyLinekdList DLL = new DoublyLinekdList.DoublyLinekdList();
+                        SinglyLinekdListAHome SLLhome = new SinglyLinekdListAHome();
+                        SLLhome.SLLHome();
+
+
+                /*        DoublyLinekdList.DoublyLinekdList DLL = new DoublyLinekdList.DoublyLinekdList();
                         SinglyLinkedList SLL = new SinglyLinkedList();
 
-                        /* 
+                       
                          SLL.AddFirst(10);
                          SLL.AddFirst(30);
                          SLL.AddFirst(5);
@@ -35,7 +42,7 @@ namespace DataStructurePrograms.SinglyLinkedList
                          SLL.MiddleNode();
 
                          SLL.Display();
-                         */
+                       
 
                         DLL.InsertAtBegingin(20);
                         DLL.InsertAtBegingin(30);
@@ -58,16 +65,42 @@ namespace DataStructurePrograms.SinglyLinkedList
                         DLL.displayBackWord();
                         Console.WriteLine(DLL.Length());
                         Console.WriteLine(DLL.isEmpty());
-
+                        */
                         break;
                     case 2:
-                      
+                        ReadWordFromFile read = new ReadWordFromFile();
+                        read.ReadwordfromFile();
                       
 
                         break;
                     case 3:
-                        break;
+                        stack stack = new stack();
+                        stack.push(20);
+                        stack.push(30);
+                        stack.push(40);
+                        stack.push(50);
+                        
+                        stack.display();
+                        Console.WriteLine(stack.peek());
 
+                        Console.WriteLine();
+                        Console.WriteLine(stack.isEmpty());
+                       
+                        Console.WriteLine(stack.Length());
+                    
+                        break;
+                    case 4:
+                        primeNumber prime = new primeNumber();
+                        prime.primenumber();
+                        break;
+                     case 5:
+                        primeAnagram primeAnagram = new primeAnagram();
+                        primeAnagram.primeanagram();
+                        break;
+                    case 6:
+                        Calender calender = new Calender();
+                        calender.createCalender();
+                        break;
                     default:
                         Console.WriteLine("Your Selection is Wrong");
                         break;

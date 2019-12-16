@@ -36,7 +36,7 @@ namespace DataStructurePrograms.SinglyLinkedList
             }
         }
 
-        public void AddLast(object data)
+        public  void AddLast(object data)
         {
             ListNode newNode = new ListNode(data);
             ListNode current = head;
@@ -143,6 +143,50 @@ namespace DataStructurePrograms.SinglyLinkedList
 
             }
         }
+
+               /// <summary>
+               /// Delete Data if Already Exists
+               /// </summary>
+               /// <param name="data"></param>
+
+
+        public bool seachDelete(int data)
+        {
+            ListNode newNode = new ListNode(data);
+            ListNode previous = head;
+           
+            ListNode previousTolast = null;
+           // ListNode current = head;
+         
+            while (previous!=null)
+            {
+
+                if (previous.data.Equals(data))
+                {
+
+                    ListNode temp = previous.next;
+                    previousTolast.next = temp;
+                    return true;
+                }
+              
+                              previousTolast = previous;
+                          previous = previous.next;
+               
+
+            }
+
+            return false;
+
+
+
+
+
+
+
+        }
+
+
+
 
 
 
