@@ -79,7 +79,7 @@ namespace DataStructurePrograms
             int k = 0;
             bool result;
             int temp = 0;
-            int flag = 0,chackAnagram;
+            int flag = 0;
             int[,] arr = new int[1000, 1000];
             int[] temparr = new int[200];
 
@@ -121,11 +121,11 @@ namespace DataStructurePrograms
                 {
                     string frist = temparr[i] + "";
                     string second = temparr[j] + "";
+                   
                     result = DetectAnagram(frist, second);
                     if (result)
                     {
-
-                        Console.WriteLine(frist + " is " + second + "\t");
+                        Console.WriteLine(frist + "   " + second + "\t");
                     }
                    
                 }
@@ -180,6 +180,10 @@ namespace DataStructurePrograms
             }return false;
 
         }
+
+
+      
+
 
 
 

@@ -27,10 +27,19 @@ namespace DataStructurePrograms
 
             Console.WriteLine("The Number of Days in this Month is  --->" + days[month]);
             int d = Utility.calender(month, 1, year);
-            for (int i = 0; i < d; i++)
+            Console.WriteLine(d);
+            int i, j;
+            Console.WriteLine(" su  mo  tu  we  th  fr  sa");
+            for (i = 0; i <= d; i++)
             {
-                Console.WriteLine(i); 
+                Console.Write(" ");
             }
+            for (j = 1; j <= days[month]; j++)
+            {
+                Console.Write("   " + j);
+                if (((j + d) % 7 == 0) || (j == days[month]))
+                    Console.WriteLine("\n");
+            }          
 
         }
 

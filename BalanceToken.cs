@@ -4,12 +4,12 @@ using System.Text;
 
 namespace DataStructurePrograms
 {
-    class primeAnagram
+    class BalanceToken
     {
-        public void primeanagram()
+
+        public void balanceToken()
         {
-            Utility.primeAnagram();
-       
+            char[] ch = { '{', '(', ')', '}', '[', ']' };
         }
 
     }

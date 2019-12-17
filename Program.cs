@@ -15,12 +15,18 @@ namespace DataStructurePrograms.SinglyLinkedList
             do
             {
                 Console.WriteLine("Enter Your Choice");
-                Console.WriteLine(" ::  1  :: LinkedList");
-                Console.WriteLine(" ::  2  :: Queue");
-                Console.WriteLine(" ::  3  :: Stack");
-                Console.WriteLine(" ::  4  :: prime number 1-1000");
-                Console.WriteLine(" ::  5  :: primeAnagram 1-1000");
-                Console.WriteLine(" ::  6  :: Calender ");
+                Console.WriteLine(" ::  1   :: LinkedList");
+                Console.WriteLine(" ::  2   :: Queue");
+                Console.WriteLine(" ::  3   :: Stack");
+                Console.WriteLine(" ::  4   :: prime number 1-1000");
+                Console.WriteLine(" ::  5   :: primeAnagram 1-1000");
+                Console.WriteLine(" ::  6   :: Calender ");
+                Console.WriteLine(" ::  7   :: Read content form file ");
+                Console.WriteLine(" ::  8   :: 0-1000 primeAnagram store in stack print using linked list ");
+                Console.WriteLine(" ::  9   :: 0-1000 prime store in queue print using linked list ");
+                Console.WriteLine(" ::  10  :: using stack Balancing token problem");
+                Console.WriteLine(" ::  11  :: Seaching Element using Hash maping ");
+                Console.WriteLine(" ::  12  :: Pallindrom Chacker ");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -30,64 +36,19 @@ namespace DataStructurePrograms.SinglyLinkedList
                         SLLhome.SLLHome();
 
 
-                /*        DoublyLinekdList.DoublyLinekdList DLL = new DoublyLinekdList.DoublyLinekdList();
-                        SinglyLinkedList SLL = new SinglyLinkedList();
-
-                       
-                         SLL.AddFirst(10);
-                         SLL.AddFirst(30);
-                         SLL.AddFirst(5);
-                         SLL.AddFirst(11);
-                         SLL.AddFirst(17);
-                         SLL.MiddleNode();
-
-                         SLL.Display();
-                       
-
-                        DLL.InsertAtBegingin(20);
-                        DLL.InsertAtBegingin(30);
-                        DLL.InsertAtBegingin(40);
-                        DLL.InsertAtBegingin(50);
-                        DLL.InsertAtBegingin(60);
-                        DLL.InsertAtBegingin(70);
-                        DLL.InsertAtLast(100);
-                        // DLL.InsertAtLast(100);
-                        //  DLL.insertAt(4, 300);
-                     //    DLL.deleteAt(3);
-
-                        // DLL.deleteFrist();
-
-                        // DLL.deleteAtLast();
-                        Console.WriteLine("The Original  Linked List");
-                        DLL.DisplayFoward();
-                        Console.WriteLine("The Reverse of the Linked List");
-                     
-                        DLL.displayBackWord();
-                        Console.WriteLine(DLL.Length());
-                        Console.WriteLine(DLL.isEmpty());
-                        */
                         break;
                     case 2:
-                        ReadWordFromFile read = new ReadWordFromFile();
-                        read.ReadwordfromFile();
+                       
+                        QueueHome queue = new QueueHome();
+                        queue.Queuehome();
                       
 
                         break;
                     case 3:
-                        stack stack = new stack();
-                        stack.push(20);
-                        stack.push(30);
-                        stack.push(40);
-                        stack.push(50);
-                        
-                        stack.display();
-                        Console.WriteLine(stack.peek());
-
-                        Console.WriteLine();
-                        Console.WriteLine(stack.isEmpty());
                        
-                        Console.WriteLine(stack.Length());
-                    
+                        StackHome home = new StackHome();
+                        home.stackhome();
+
                         break;
                     case 4:
                         primeNumber prime = new primeNumber();
@@ -100,6 +61,28 @@ namespace DataStructurePrograms.SinglyLinkedList
                     case 6:
                         Calender calender = new Calender();
                         calender.createCalender();
+                        break;
+                    case 7:
+                        ReadWordFromFile read = new ReadWordFromFile();
+                        read.ReadwordfromFile();
+                        break;
+
+                    case 8:
+                        primeAnagramStack primeAnagramStack = new primeAnagramStack();
+                        primeAnagramStack.primeAnagramstack();
+                        break;
+                    case 9:
+                        primeAnagramQueue primeAnagramQueue = new primeAnagramQueue();
+                        primeAnagramQueue.primeAnagramsQueue();
+
+                        break;
+                    case 10:
+                        break;
+                    case 11:
+                        break;
+                    case 12:
+                        Pallindromchecker pallindrom = new Pallindromchecker();
+                        pallindrom.pallindromchecker();
                         break;
                     default:
                         Console.WriteLine("Your Selection is Wrong");
