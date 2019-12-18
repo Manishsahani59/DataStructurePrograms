@@ -9,15 +9,16 @@ namespace DataStructurePrograms
       
         public static void primeAnagramstack()
         {
-            stack Stack = new stack();
+            stack Stack1 = new stack();
+            stack Stack2 = new stack();
             int k = 0;
             bool result;
             int temp = 0;
             int flag = 0;
-            int[,] arr = new int[1000, 1000];
-            int[] temparr = new int[200];
+           
+            int[] temparr = new int[170];
 
-            for (int no = 1; no < 1000; no++)
+            for (int no = 1; no <= 1000; no++)
             {
                 //  chackAnagram = no;
                 for (int i = 2; i <= no - 1; i++)
@@ -60,16 +61,20 @@ namespace DataStructurePrograms
                     {
                         int val1 = Convert.ToInt32(frist);
                         int val2 = Convert.ToInt32(second);
-                        Stack.push(val1);
+                        Stack1.push(val1);
+                        Stack2.push(val2);
                        
                     }
 
                 }
             }
-            
+            Console.WriteLine("The Prime Number");
+            Stack1.dispaly();
+            Console.WriteLine("The crossponding Anagram No");
+            Stack2.dispaly();
 
-            Stack.dispaly();
-           Console.WriteLine(Stack.Length());
+            Console.WriteLine(Stack1.Length());
+           Console.WriteLine(Stack2.Length());
         }
 
         public static bool DetectAnagram(string frist, string second)

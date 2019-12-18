@@ -19,6 +19,7 @@ namespace DataStructurePrograms
                 Console.WriteLine("Enter 4 . isEmpty");
                 Console.WriteLine("Enter 5 . Length of the Queue");
                 Console.WriteLine("Enter 6 . Dispaly the Queues");
+                Console.WriteLine("Enter 7 . Remove form Rear");
                 Console.WriteLine("Enter Your Choice");
                 int choice = Convert.ToInt32(Console.ReadLine());
 
@@ -48,6 +49,7 @@ namespace DataStructurePrograms
                     case 3:
                         Console.Write("Before Delete the Element the list is -->  ");
                         queue.dispaly();
+                        queue.Dequeue();
                         Console.WriteLine("The Length  --->" + queue.Length());
                         Console.Write("After Pop the Element the list is -->  ");
                         queue.dispaly();
@@ -62,6 +64,10 @@ namespace DataStructurePrograms
                         Console.WriteLine("The Length of the stack is ---> " + queue.Length());
                         break;
                     case 6:
+                        queue.dispaly();
+                        break;
+                    case 7:
+                        queue.removeRear();
                         queue.dispaly();
                         break;
 

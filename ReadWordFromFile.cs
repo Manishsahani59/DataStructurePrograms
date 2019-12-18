@@ -44,15 +44,7 @@ namespace DataStructurePrograms.SinglyLinkedList
                 SLL.Display();
             }
 
-            
-           
             SLL.LengthofList();
-
-
-
-
-
-
 
         }
 

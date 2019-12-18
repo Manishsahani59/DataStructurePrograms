@@ -67,8 +67,6 @@ namespace DataStructurePrograms
                         */
 
             queue.dispaly();
-            queue.reverseQueue();
-            Console.WriteLine(queue.Length());
         }
 
         public static bool DetectAnagram(string frist, string second)

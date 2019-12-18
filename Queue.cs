@@ -7,15 +7,18 @@ namespace DataStructurePrograms
     class Queue
     {
 
+    
         Queue front;
         Queue rear;
         Queue next;
         int data;
         int length = 0;
-       
 
-      
-      public int Length()
+        stack top;
+
+
+
+        public int Length()
         {
             return length;
         }
@@ -66,6 +69,30 @@ namespace DataStructurePrograms
             
         }
 
+
+        public void removeRear()
+        {
+
+            Queue current = new Queue();
+            if (isEmpty())
+            {
+                Console.WriteLine("Queue is Empty");
+            }
+            else
+            {
+                int result = rear.data;
+                rear = rear.next;
+                if (rear == null)
+                {
+                    front = null;
+                }
+                Console.WriteLine("The Delete data is ---" +result);
+
+                length--;
+
+            }
+        }
+
         public void dispaly()
         {
             Queue current = front;
@@ -78,28 +105,8 @@ namespace DataStructurePrograms
         }
 
 
-        public void reverseQueue()
-        {
-            Queue queue = new Queue();
-          
-            while (front != null)
-                if (isEmpty())
-                {
-                    return;
-                }
-                else
-                {
-                   int result = front.data;
-                    front = front.next;
-                    length--;
-                    queue.Enequeue(result);
-                   
-
-                }
-           
-
-        }
       
+     
        
           
         }

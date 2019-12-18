@@ -27,6 +27,7 @@ namespace DataStructurePrograms.SinglyLinkedList
                 Console.WriteLine(" ::  10  :: using stack Balancing token problem");
                 Console.WriteLine(" ::  11  :: Seaching Element using Hash maping ");
                 Console.WriteLine(" ::  12  :: Pallindrom Chacker ");
+                Console.WriteLine(" ::  13  :: Cash Counter Problem ");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -51,8 +52,10 @@ namespace DataStructurePrograms.SinglyLinkedList
 
                         break;
                     case 4:
-                        primeNumber prime = new primeNumber();
-                        prime.primenumber();
+                         primeNumber prime = new primeNumber();
+                         prime.primenumber();
+                        
+
                         break;
                      case 5:
                         primeAnagram primeAnagram = new primeAnagram();
@@ -77,12 +80,21 @@ namespace DataStructurePrograms.SinglyLinkedList
 
                         break;
                     case 10:
+
+                        BalanceToken balancetoken = new BalanceToken();
+                        balancetoken.balanceToken();
                         break;
                     case 11:
+                        hashingFunction hfuntion = new hashingFunction();
+                        hfuntion.hashingfunction();
                         break;
                     case 12:
                         Pallindromchecker pallindrom = new Pallindromchecker();
                         pallindrom.pallindromchecker();
+                        break;
+                    case 13:
+                        CaseCounter casecounter = new CaseCounter();
+                        casecounter.cashcounter();
                         break;
                     default:
                         Console.WriteLine("Your Selection is Wrong");

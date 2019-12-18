@@ -4,17 +4,17 @@ using System.Text;
 
 namespace DataStructurePrograms
 {
-    class stack
+    class stackChar
     {
 
-       public stack next;
-       public int data;
-       public int length = 0;
+        public stack next;
+        public char data;
+        public int length = 0;
 
-       public stack top;
+        public stack top;
 
-      
-        public void push(int data)
+
+        public void push(char data)
         {
             stack newnode = new stack();
             newnode.data = data;
@@ -22,7 +22,7 @@ namespace DataStructurePrograms
             top = newnode;
             length++;
         }
-        public void push1(int data)
+        public void push1(char data)
         {
             stack newnode = new stack();
             newnode.data = data;
@@ -48,21 +48,21 @@ namespace DataStructurePrograms
             }
         }
 
-        public int peek()
+        public char peek()
         {
             if (isEmpty())
             {
                 throw new EmptyStackException();
             }
-            return top.data;
+            return (char)top.data;
         }
 
         public void pop()
         {
-            int reult = top.data;
+            char reult = (char)top.data;
             top = top.next;
             length--;
-            Console.WriteLine("The Top of the Stack element deleted ----> " +reult);
+            Console.WriteLine("The Top of the Stack element deleted ----> " + reult);
         }
 
 
@@ -72,9 +72,10 @@ namespace DataStructurePrograms
             if (isEmpty())
             {
                 return;
-            } else
+            }
+            else
             {
-                 reult = top.data;
+                reult = top.data;
                 top = top.next;
                 length--;
                 Console.WriteLine("The Top of the Stack element deleted ----> " + reult);
@@ -83,6 +84,6 @@ namespace DataStructurePrograms
             stack stack = new stack();
             stack.push(reult);
         }
-      
+
     }
 }

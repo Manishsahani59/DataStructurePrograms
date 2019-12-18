@@ -9,7 +9,9 @@ namespace DataStructurePrograms
 
         public void balanceToken()
         {
-            char[] ch = { '{', '(', ')', '}', '[', ']' };
+           char[] exp = { '[','{', '(', ')', '}', '[', ']',']' };
+           Console.WriteLine(Utility.AreBalanced(exp));
+
         }
 
     }

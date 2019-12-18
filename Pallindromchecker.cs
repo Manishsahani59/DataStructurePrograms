@@ -8,19 +8,28 @@ namespace DataStructurePrograms
     {
         public void pallindromchecker()
         {
-            Queue queue = new Queue();
+            UnorderedQueue queue = new UnorderedQueue();
             Console.WriteLine("Enter the String to check Pallindrom");
             string word = Console.ReadLine();
             
             for (int i = 0; i < word.Length; i++)
             {
-              
-                queue.Enequeue(word[i]) ;
+                 queue.DoubliyQueue(word[i]);
             }
-
-            queue.dispaly();
-
+                
+        //    queue.dispaly();
+            bool result = queue.rearTraverse();
+            if (result)
+            {
+                Console.WriteLine("true");
+            }
+            else
+            {
+                Console.WriteLine("false");
+            }
+      //      queue.removerear();
             Console.WriteLine("The Length of the Queue --->  " + queue.Length());
+        
         }
         
 

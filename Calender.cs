@@ -8,8 +8,8 @@ namespace DataStructurePrograms
     {
         public void createCalender()
         {
-            Console.WriteLine("Enter the Day");
-            int day = Convert.ToInt32(Console.ReadLine());
+           /* Console.WriteLine("Enter the Day");
+            int day = Convert.ToInt32(Console.ReadLine());*/
             Console.WriteLine("Enter the Month");
             int month= Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter the Year");
@@ -24,19 +24,19 @@ namespace DataStructurePrograms
             {
                 days[month] = 29;
             }
-
+           
             Console.WriteLine("The Number of Days in this Month is  --->" + days[month]);
             int d = Utility.calender(month, 1, year);
             Console.WriteLine(d);
             int i, j;
-            Console.WriteLine(" su  mo  tu  we  th  fr  sa");
+            Console.WriteLine("  su  mo   tu   we  th  fr  sa");
             for (i = 0; i <= d; i++)
             {
-                Console.Write(" ");
+                Console.Write("    ");
             }
             for (j = 1; j <= days[month]; j++)
             {
-                Console.Write("   " + j);
+                Console.Write("  " + j);
                 if (((j + d) % 7 == 0) || (j == days[month]))
                     Console.WriteLine("\n");
             }          

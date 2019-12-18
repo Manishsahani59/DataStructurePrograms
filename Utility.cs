@@ -4,6 +4,9 @@ using System.Text;
 
 namespace DataStructurePrograms
 {
+
+
+   
     /// <summary>
     ///         prime Number 0 to 1000 and store in 2D arry in the sequence of 0-100,100-200, and showon 
     /// </summary>
@@ -76,12 +79,15 @@ namespace DataStructurePrograms
         /// </summary>
         public static void primeAnagram()
         {
-            int k = 0;
+            int k = 0, l=0,m=0 ;
             bool result;
             int temp = 0;
             int flag = 0;
-            int[,] arr = new int[1000, 1000];
-            int[] temparr = new int[200];
+         
+            int AnagramCount,notanagram;
+            int[,] primeAnagram = new int[70, 70];
+            int[,] notAnagram = new int[70, 70];
+            int[] temparr = new int[170];
 
             for (int no = 1; no <1000; no++)
             {
@@ -125,11 +131,21 @@ namespace DataStructurePrograms
                     result = DetectAnagram(frist, second);
                     if (result)
                     {
-                        Console.WriteLine(frist + "   " + second + "\t");
+                        //  primeAnagram[i, j] =frist;
+
+                        //   Console.Write(primeAnagram[i, j] + "  ");
+                       
+                        i++;
+                        Console.WriteLine(frist + "   " + second + "\t"  );
                     }
+                   
+                  
                    
                 }
             }
+
+           
+
         }
 
         public static bool DetectAnagram(string frist, string second)
@@ -181,6 +197,56 @@ namespace DataStructurePrograms
 
         }
 
+
+
+
+        public static bool AreBalanced(char[] exp)
+        {
+
+            stackChar stake1 = new stackChar();
+
+            for (int i = 0; i < exp.Length; i++)
+            {
+                if (exp[i] == '(' || exp[i] == '{' || exp[i] == '[')
+                {
+                    stake1.push(exp[i]);
+                }
+                else if (exp[i] == '}' || exp[i] == ']' || exp[i] == ')')
+                {
+                    if (stake1.isEmpty() || (!ArePair(stake1.peek(), exp[i])))
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        stake1.pop();
+                    }
+                }
+               
+             
+            }
+         
+            if (stake1.isEmpty())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+        public static bool ArePair(char ch1, char ch2)
+        {
+            if (ch1 == '(' && ch2 == ')')
+                return true;
+            if (ch1 == '{' && ch2 == '}')
+                return true;
+            if (ch1 == '[' && ch2 == ']')
+                return true;
+           return false;
+
+        }
 
       
 
