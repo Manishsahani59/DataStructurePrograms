@@ -9,8 +9,8 @@ namespace DataStructurePrograms.SinglyLinkedList
     {
         static void Main()
         {
-
-
+            int choice;
+            bool valiation;
            char input;
             do
             {
@@ -23,12 +23,12 @@ namespace DataStructurePrograms.SinglyLinkedList
                 Console.WriteLine(" ::  6   :: Calender ");
                 Console.WriteLine(" ::  7   :: Read content form file ");
                 Console.WriteLine(" ::  8   :: 0-1000 primeAnagram store in stack print using linked list ");
-                Console.WriteLine(" ::  9   :: 0-1000 prime store in queue print using linked list ");
+                Console.WriteLine(" ::  9   :: 0-1000 prime number that are Anagram store in queue print using linked list ");
                 Console.WriteLine(" ::  10  :: using stack Balancing token problem");
                 Console.WriteLine(" ::  11  :: Seaching Element using Hash maping ");
                 Console.WriteLine(" ::  12  :: Pallindrom Chacker ");
                 Console.WriteLine(" ::  13  :: Cash Counter Problem ");
-                int choice = Convert.ToInt32(Console.ReadLine());
+                choice = Utility.switchcasevalidation();
                 switch (choice)
                 {
                    
@@ -62,8 +62,11 @@ namespace DataStructurePrograms.SinglyLinkedList
                         primeAnagram.primeanagram();
                         break;
                     case 6:
-                        Calender calender = new Calender();
-                        calender.createCalender();
+
+                        calenderusingtwoDarray calender = new calenderusingtwoDarray();
+                        calender.calendertwodimesional();
+                        /*Calender calender = new Calender();
+                        calender.createCalender();*/
                         break;
                     case 7:
                         ReadWordFromFile read = new ReadWordFromFile();
@@ -100,8 +103,10 @@ namespace DataStructurePrograms.SinglyLinkedList
                         Console.WriteLine("Your Selection is Wrong");
                         break;
                 }
-                Console.WriteLine("If You Want Continue Press Y/N");
-                input = Convert.ToChar(Console.ReadLine());
+
+                Console.WriteLine("want to continue y/n");
+                input = Utility.ExitValidation();
+
             } while (input.Equals('Y') || input.Equals('y'));
             
         }

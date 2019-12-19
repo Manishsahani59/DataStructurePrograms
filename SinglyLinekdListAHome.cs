@@ -9,8 +9,13 @@ namespace DataStructurePrograms.SinglyLinkedList
     {
         public void SLLHome()
         {
-           
-            char input;
+            SinglyLinkedList singlelinkedlist = new SinglyLinkedList();
+            int datafront;
+            int datalast;
+            int data;
+            char exit,gofor;
+            int choice;
+            bool flag;
             do
             {
                 Console.WriteLine(" 1. create Linked List");
@@ -22,57 +27,90 @@ namespace DataStructurePrograms.SinglyLinkedList
                 Console.WriteLine(" 7. Delete At End ");
                 Console.WriteLine(" 8. Delete At Given Positon ");
                 Console.WriteLine(" 9. Find the Length of Linked List ");
-
-                Console.WriteLine("Enter Your Choice");
-                int choice = Convert.ToInt32(Console.ReadLine());
-                switch (choice)
-                {
-                    
-                    case 1:
-                        SinglyLinkedList SLL = new SinglyLinkedList();
-                        Console.WriteLine("Enter the Size of the List");
-                        int size = Convert.ToInt32(Console.ReadLine());
-                        for (int i = 1; i <= size; i++)
-                        {
-                            int value = Convert.ToInt32(Console.ReadLine());
-                            SLL.AddFirst(value);
-                        }
-                        SLL.Display();
-
-                        break;
-                    case 2:
-                        SinglyLinkedList SLL1 = new SinglyLinkedList();
-                        Console.WriteLine("Enter the Size of the List");
-                        int size1 = Convert.ToInt32(Console.ReadLine());
-                        for (int i = 1; i <= size1; i++)
-                        {
-                            int value = Convert.ToInt32(Console.ReadLine());
-                            SLL1.AddFirst(value);
-                        }
-                       
-                        SLL1.Display();
-
-                        break;
-                    case 3:
-                        break;
-                    case 4:
-                        break;
-                    case 5:
-                        break;
-                    case 6:
-                        break;
-                    case 7:
-                        break;
-                    case 8:
-                        break;
-                    case 9:
-                        break;
+                Console.WriteLine(" 10. isEmpty");
+                Console.WriteLine(" 11. Display the List ");
 
 
-                }
-                Console.WriteLine("If you Want Continue Press Y/N");
-                input = Convert.ToChar(Console.ReadLine());
-            } while (input.Equals('Y') || input.Equals('y'));
+
+              
+                    choice = Utility.switchcasevalidation();
+                    switch (choice)
+                    {
+
+                        case 1:
+                            Console.WriteLine("The length of the list is    -----> " +singlelinkedlist.Length());
+                            Console.WriteLine(" empty list is    -----> " +singlelinkedlist.isEmpty());
+
+                            break;
+                        case 2:
+
+                            Console.WriteLine("Enter the data");
+                            datafront = Utility.inputValidation();
+                            singlelinkedlist.AddFirst(datafront);
+
+                            break;
+                        case 3:
+                            Console.WriteLine("Enter the data");
+                            datalast = Utility.inputValidation();
+                            singlelinkedlist.AddLast(datalast);
+
+                            break;
+                        case 4:
+                            Console.WriteLine("Enter the position");
+                            int dataposition;
+                            int position = Utility.inputValidation();
+                            Console.WriteLine("Enter the data");
+                            do {
+                                
+                                flag = int.TryParse(Console.ReadLine(), out dataposition);
+                                if (flag == true)
+                                    break;
+                                Console.WriteLine("Enter the valid input");
+                            } while (!flag);
+                            
+                            singlelinkedlist.InsertAt(position, dataposition);
+
+
+                            break;
+                        case 5:
+                            Console.WriteLine("Enter the data");
+                            int searchdata = Utility.inputValidation();
+                            singlelinkedlist.search(searchdata);
+
+                            break;
+                        case 6:
+                            singlelinkedlist.deleteFirst();
+
+                            break;
+                        case 7:
+                            singlelinkedlist.DeleteLast();
+                            break;
+                        case 8:
+                            Console.WriteLine("Enter the postion");
+                            int index = Utility.inputValidation();
+                            singlelinkedlist.DeleteAt(index);
+                            break;
+                        case 9:
+                            singlelinkedlist.LengthofList();
+                            break;
+                        case 10:
+                            Console.WriteLine(singlelinkedlist.isEmpty());
+                            break;
+                        case 11:
+                            singlelinkedlist.Display();
+                            break;
+                        default:
+                            Console.WriteLine("Enter wrong option");
+                            break;
+                    }
+                   
+
+
+
+                Console.WriteLine("Do you want to go back");
+                exit = Utility.ExitValidation();
+               
+            } while (exit.Equals('Y') || exit.Equals('y'));
         }
 
     }

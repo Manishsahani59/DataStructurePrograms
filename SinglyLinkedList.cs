@@ -7,7 +7,20 @@ namespace DataStructurePrograms.SinglyLinkedList
     class SinglyLinkedList
     {
         ListNode head;
+        int length = 0;
 
+        public int Length()
+        {
+            return length;
+        }
+        public bool isEmpty()
+        {
+            return length == 0;
+        }
+
+        /// <summary>
+        /// this method to find the middle node in the list
+        /// </summary>
         public void MiddleNode()
         {
             ListNode Fp = head;
@@ -21,33 +34,51 @@ namespace DataStructurePrograms.SinglyLinkedList
             Console.WriteLine(Sp);
         }
 
-
+        /// <summary>
+        /// this method to add the data in the list from begning
+        /// </summary>
+        /// <param name="data"></param>
         public void AddFirst(object data)
         {
             ListNode newNode = new ListNode(data);
             if (head == null)
             {
                 head = newNode;
+                length++;
             }
             else
             {
                 newNode.next = head;
                 head = newNode;
+                length++;
             }
         }
-
+        /// <summary>
+        /// This method insert data form the end in the linked list
+        /// </summary>
+        /// <param name="data"></param>
         public  void AddLast(object data)
         {
             ListNode newNode = new ListNode(data);
             ListNode current = head;
-            while (current.next != null)
+            if (head == null)
             {
-                current = current.next;
-
+                head = newNode;
             }
-            current.next = newNode;
-        }
+            else {
+                while (current.next != null)
+                {
+                    current = current.next;
 
+                }
+                current.next = newNode;
+                length++;
+            }
+            
+        }
+        /// <summary>
+        /// this method find the length of the list i.e how much element stored in the list
+        /// </summary>
         public void LengthofList()
         {
             ListNode current = head;
@@ -60,7 +91,9 @@ namespace DataStructurePrograms.SinglyLinkedList
             Console.WriteLine("The Length of the List is ---- > " + count);
         }
 
-
+        /// <summary>
+        /// this method display the list
+        /// </summary>
         public void Display()
         {
             ListNode current = head;
@@ -72,7 +105,11 @@ namespace DataStructurePrograms.SinglyLinkedList
             Console.WriteLine("\n");
 
         }
-
+        /// <summary>
+        /// this method insert the data at the given position
+        /// </summary>
+        /// <param name="position"></param>
+        /// <param name="data"></param>
         public void InsertAt(int position, object data)
         {
             ListNode newNode = new ListNode(data);
@@ -86,8 +123,11 @@ namespace DataStructurePrograms.SinglyLinkedList
             ListNode temp = current.next;
             newNode.next = temp;
             current.next = newNode;
+            length++;
         }
-
+        /// <summary>
+        /// remove the frist element form the list
+        /// </summary>
         public void deleteFirst()
         {
 
@@ -95,9 +135,13 @@ namespace DataStructurePrograms.SinglyLinkedList
             ListNode temp = head;
             head = head.next;
             temp.next = null;
+            length--;
 
 
         }
+        /// <summary>
+        /// this method delete the data form the last
+        /// </summary>
         public void DeleteLast()
         {
             ListNode current = head;
@@ -109,23 +153,39 @@ namespace DataStructurePrograms.SinglyLinkedList
 
             }
             previoustocurrent.next = null;
+            length--;
         }
-
+        /// <summary>
+        /// this insert the data from the given location
+        /// </summary>
+        /// <param name="position"> postion is the variable i.e the index value from where we want to remove the data</param>
         public void DeleteAt(int position)
         {
             ListNode previous = head;
             ListNode previousTolast = null;
             int count = 1;
-            while (count < position - 1)
+            if (position == 1)
             {
-                previousTolast = previous;
-                previous = previous.next;
-                count++;
+                SinglyLinkedList sll = new SinglyLinkedList();
+                sll.deleteFirst();
             }
-            ListNode temp = previous.next;
-            previousTolast.next = temp;
+            else
+            {
+                while (count < position - 1)
+                {
+                    previousTolast = previous;
+                    previous = previous.next;
+                    count++;
+                }
+                ListNode temp = previous.next;
+                previousTolast.next = temp;
+                length--;
+            }
         }
-
+        /// <summary>
+        /// serach the data from the list
+        /// </summary>
+        /// <param name="data"></param>
         public void search(int data)
         {
 
@@ -169,7 +229,7 @@ namespace DataStructurePrograms.SinglyLinkedList
                     return true;
                 }
               
-                              previousTolast = previous;
+                          previousTolast = previous;
                           previous = previous.next;
                
 
@@ -179,15 +239,25 @@ namespace DataStructurePrograms.SinglyLinkedList
 
 
 
-
-
-
-
         }
 
 
+       
 
-
+        public int takeinput()
+        {
+            Console.WriteLine("Enter the value");
+            int value;
+            bool validate;
+            do
+            {
+                validate = int.TryParse(Console.ReadLine(), out value);
+                if (validate == true)
+                    break;
+                Console.WriteLine("Enter the valid Input");
+            } while (!validate);
+            return value;
+        }
 
 
 

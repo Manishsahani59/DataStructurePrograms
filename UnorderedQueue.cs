@@ -25,7 +25,10 @@ namespace DataStructurePrograms
             return length == 0;
         }
 
-
+        /// <summary>
+        ///  insert data in the queue using doubly linked list
+        /// </summary>
+        /// <param name="data"></param>
         public void DoubliyQueue(object data)
         {
             UnorderedQueue newdata = new UnorderedQueue();
@@ -43,7 +46,10 @@ namespace DataStructurePrograms
             rear = newdata;
             length++;
         }
-
+        /// <summary>
+        ///   queue implementaion using doubly linked list
+        /// </summary>
+        /// <returns></returns>
         public bool rearTraverse()
         {
             bool flag=false;
@@ -70,6 +76,10 @@ namespace DataStructurePrograms
         
         }
 
+        /// <summary>
+        ///  insert the data in the queue
+        /// </summary>
+        /// <param name="data">data is the object type variable</param>
         public void enequeue(object data)
         {
 
@@ -88,7 +98,9 @@ namespace DataStructurePrograms
             length++;
         }
 
-
+        /// <summary>
+        /// dispaly the queue
+        /// </summary>
         public void dispaly()
         {
             UnorderedQueue current = front;
@@ -98,7 +110,9 @@ namespace DataStructurePrograms
                 current = current.next;
             }
         }
-
+        /// <summary>
+        /// it removes the data form the front
+        /// </summary>
         public void Dequeue()
         {
             if (isEmpty())
@@ -111,6 +125,9 @@ namespace DataStructurePrograms
             length--;
             //Console.WriteLine(data);
         }
+        /// <summary>
+        /// it removes the data from the rear
+        /// </summary>
         public void removerear()
         {
             
@@ -126,7 +143,9 @@ namespace DataStructurePrograms
           
         }
 
-
+        /// <summary>
+        /// cash counter dequeue
+        /// </summary>
 
         public void dequeueOneByOne()
         {
@@ -142,39 +161,58 @@ namespace DataStructurePrograms
                 Console.WriteLine(data + " press 2.  Deposite ");
 
                 Console.WriteLine("Now the Remaning Pepole in the Queue is   " +length ) ;
-               
-                choice = Convert.ToInt32(Console.ReadLine());
+
+                choice = Utility.switchcasevalidation();
                 switch (choice)
                 {
                     case 1:
-                        Console.WriteLine("You Enter the withdrow Option");
-                        Console.WriteLine("Enter the Money How much you Want");
-                        int balance = Convert.ToInt32(Console.ReadLine());
-                        if (balance > cash)
+                        try
                         {
-                            Console.WriteLine("No sufficient Balance in the Bank Please try Later");
-                            Console.WriteLine("The only Amount int the  Bank is----> " + cash);
+
+                            Console.WriteLine("You Enter the withdrow Option");
+                            Console.WriteLine("Enter the Money How much you Want");
+                            int balance = Convert.ToInt32(Console.ReadLine());
+                            if (balance > cash)
+                            {
+                                Console.WriteLine("No sufficient Balance in the Bank Please try Later");
+                                Console.WriteLine("The only Amount int the  Bank is----> " + cash);
+                            }
+                            else
+                            {
+                                cash = cash - balance;
+                                Console.WriteLine(data + "You Withdrow Amount ------> " + balance);
+                                Console.WriteLine("The Updated cash in the  Bank is----> " + cash);
+                            }
+
                         }
-                        else {
-                            cash = cash - balance;
-                            Console.WriteLine( data +"You Withdrow Amount ------> " + balance);
-                            Console.WriteLine("The Updated cash in the  Bank is----> " + cash);
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
                         }
+                        
 
                         break;
                     case 2:
-                        Console.WriteLine( data+" You Enter the deposite Option");
-                        Console.WriteLine("Enter the Money how much you want to Deposite");
-                        int deposte = Convert.ToInt32(Console.ReadLine());
-                        if (deposte <= 0)
+                        try
                         {
-                            Console.WriteLine("Please Enter the Valid Amount");
+                            Console.WriteLine(data + " You Enter the deposite Option");
+                            Console.WriteLine("Enter the Money how much you want to Deposite");
+                            int deposte = Convert.ToInt32(Console.ReadLine());
+                            if (deposte <= 0)
+                            {
+                                Console.WriteLine("Please Enter the Valid Amount");
+                            }
+                            else
+                            {
+                                cash = cash + deposte;
+                                Console.WriteLine(data + " You Deposite the Amount ------> " + deposte);
+                                Console.WriteLine("The Updated cash in the  Bank is----> " + cash);
+                            }
+
                         }
-                        else
+                        catch (Exception e)
                         {
-                            cash = cash + deposte;
-                            Console.WriteLine(data+ " You Deposite the Amount ------> " + deposte);
-                            Console.WriteLine("The Updated cash in the  Bank is----> " + cash);
+                            Console.WriteLine(e.Message);
 
                         }
                             

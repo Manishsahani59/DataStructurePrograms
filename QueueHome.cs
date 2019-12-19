@@ -10,7 +10,9 @@ namespace DataStructurePrograms
         public void Queuehome()
         {
             char input;
-
+            int choice,size;
+            bool validaton;
+            int value;
             do
             {
                 Console.WriteLine("Enter 1 . create Queue");
@@ -21,8 +23,9 @@ namespace DataStructurePrograms
                 Console.WriteLine("Enter 6 . Dispaly the Queues");
                 Console.WriteLine("Enter 7 . Remove form Rear");
                 Console.WriteLine("Enter Your Choice");
-                int choice = Convert.ToInt32(Console.ReadLine());
 
+                //int choice = Convert.ToInt32(Console.ReadLine());
+                choice = Utility.switchcasevalidation(); 
 
 
 
@@ -35,15 +38,33 @@ namespace DataStructurePrograms
 
                         break;
                     case 2:
-                        Console.WriteLine("Enter the size of the Queue");
-                        int size = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine("push the Element in the stack");
-                        for (int i = 1; i <= size; i++)
+                      
+                        try
                         {
-                            int value = Convert.ToInt32(Console.ReadLine());
-                            queue.Enequeue(value);
-                        }
+                            Console.WriteLine("Enter the size of the Queue");
+                            size = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("push the Element in the stack");
+                            for (int i = 1; i <= size; i++)
+                            {
+                                do
+                                {
+                                    validaton = int.TryParse(Console.ReadLine(), out value);
+                                    if (validaton == true)
+                                        continue;
+                                    Console.WriteLine("Enter the valid value");
 
+                                } while (!validaton);
+
+                                queue.Enequeue(value);
+                            }
+
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
+                        
+                       
 
                         break;
                     case 3:
@@ -61,7 +82,7 @@ namespace DataStructurePrograms
                         Console.WriteLine("Is Empty --->" +queue.isEmpty());
                         break;
                     case 5:
-                        Console.WriteLine("The Length of the stack is ---> " + queue.Length());
+                        Console.WriteLine("The Length of the queue is ---> " + queue.Length());
                         break;
                     case 6:
                         queue.dispaly();
@@ -75,8 +96,8 @@ namespace DataStructurePrograms
                         Console.WriteLine("You select Wrong Option");
                         break;
                 }
-                Console.WriteLine("if You Want Continue Y/N");
-                input = Convert.ToChar(Console.ReadLine());
+               
+                input = Utility.ExitValidation();
             } while (input.Equals('Y') || input.Equals('y'));
         }
 

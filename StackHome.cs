@@ -11,7 +11,7 @@ namespace DataStructurePrograms
         public void stackhome()
         {
             char input;
-
+            int choice;
             do
             {
             Console.WriteLine("Enter 1 . create stack");
@@ -21,12 +21,12 @@ namespace DataStructurePrograms
             Console.WriteLine("Enter 5 . isEmpty");
             Console.WriteLine("Enter 6 . Length of the stack");
             Console.WriteLine("Enter 7 . Dispaly the stack list");
-            Console.WriteLine("Enter Your Choice");
-            int choice = Convert.ToInt32(Console.ReadLine());
+           
 
 
 
 
+                choice = Utility.switchcasevalidation();
                 switch (choice)
                 {
                     case 1:
@@ -37,11 +37,12 @@ namespace DataStructurePrograms
                         break;
                     case 2:
                         Console.WriteLine("Enter the size of the stack");
-                        int size = Convert.ToInt32(Console.ReadLine());
+                        int size = Utility.inputValidation();
                         Console.WriteLine("push the Element in the stack");
                         for (int i = 1; i <= size; i++)
                         {
-                            int value = Convert.ToInt32(Console.ReadLine());
+                            
+                            int value = Utility.inputValidation();
                             stack.push(value);
                         }
                         
@@ -73,8 +74,7 @@ namespace DataStructurePrograms
                         Console.WriteLine("You select Wrong Option");
                         break;
                 }
-                Console.WriteLine("if You Want Continue Y/N");
-                input = Convert.ToChar(Console.ReadLine());
+                input = Utility.ExitValidation();
             } while (input.Equals('Y') || input.Equals('y'));
         }
 

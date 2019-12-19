@@ -4,17 +4,20 @@ using System.Text;
 
 namespace DataStructurePrograms
 {
-
-
    
-    /// <summary>
-    ///         prime Number 0 to 1000 and store in 2D arry in the sequence of 0-100,100-200, and showon 
-    /// </summary>
     class Utility
     {
         private static int j;
 
-        public static void primeNumber(int size)
+        internal static void calender()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        ///  prime Number 0 to 1000 and store in 2D arry in the sequence of 0-100,100-200, and showon 
+        /// </summary>
+        public static void primeNumber()
         { int k = 0, m = 0;
             int[,] arr = new int[1001, 1001];
             int temp = 0;
@@ -147,6 +150,13 @@ namespace DataStructurePrograms
            
 
         }
+        /// <summary>
+        ///   this method detect the two string are anagram or not
+        ///   Anagram is the number in which second is the rearrangement of the frist
+        /// </summary>
+        /// <param name="frist"></param>
+        /// <param name="second"></param>
+        /// <returns></returns>
 
         public static bool DetectAnagram(string frist, string second)
         {  
@@ -176,7 +186,13 @@ namespace DataStructurePrograms
            
         }
         /*    End of PrimeAnagram Detection  */
-
+        /// <summary>
+        ///         this methdod in return the day of the week
+        /// </summary>
+        /// <param name="m"></param>
+        /// <param name="d"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
 
         public static int calender(int m, int d, int y)
         {
@@ -188,6 +204,11 @@ namespace DataStructurePrograms
             return d0;
         }
 
+        /// <summary>
+        ///   boolean method detect the Year is leap or not
+        /// </summary>
+        /// <param name="year"> year is a variable in which we store the value given by the user </param>
+        /// <returns></returns>
         public static bool isLeap(int year)
         {
             if ((year % 4 == 0) || (year % 400 == 0) && year % 100 != 0)
@@ -199,7 +220,11 @@ namespace DataStructurePrograms
 
 
 
-
+        /// <summary>
+        ///         Expression Brackets Are Equlas or not method
+        /// </summary>
+        /// <param name="exp"></param>
+        /// <returns></returns>
         public static bool AreBalanced(char[] exp)
         {
 
@@ -226,6 +251,8 @@ namespace DataStructurePrograms
              
             }
          
+           
+
             if (stake1.isEmpty())
             {
                 return true;
@@ -236,6 +263,12 @@ namespace DataStructurePrograms
             }
 
         }
+        /// <summary>
+        /// boolean Method to check the Brackets are equal or not if equal return true else false;
+        /// </summary>
+        /// <param name="ch1"></param>
+        /// <param name="ch2"></param>
+        /// <returns></returns>
         public static bool ArePair(char ch1, char ch2)
         {
             if (ch1 == '(' && ch2 == ')')
@@ -248,7 +281,70 @@ namespace DataStructurePrograms
 
         }
 
-      
+        /// <summary>
+        /// Exit validation
+        /// </summary>
+        /// <returns></returns>
+        public static char ExitValidation()
+        {
+            bool validation;
+            char input;
+            do
+            {
+              
+                validation = char.TryParse(Console.ReadLine(), out input);
+                if (validation == true && input == 'n' || input == 'N')
+                {
+                    Console.WriteLine("Program Exit"); 
+                    break;
+
+                }
+                
+                             
+            } while (!validation);
+
+            return input;
+
+        }
+        /// <summary>
+        /// switch case input validation
+        /// </summary>
+        /// <returns></returns>
+     
+        public static int switchcasevalidation()
+       {
+            int choice;
+            bool validation;
+            Console.WriteLine("Enter Your Choice");
+            do
+            {
+                validation = int.TryParse(Console.ReadLine(), out choice);
+                if (validation == true)
+                    break;
+                Console.WriteLine("The Input must be interger Value");
+            } while (!validation);
+            return choice;
+        }
+        /// <summary>
+        /// this method validate the input value
+        /// </summary>
+        /// <returns></returns>
+        public static int inputValidation()
+        {
+
+            bool validation;
+         //   Console.WriteLine("Enter the value");
+            int data;
+            do
+            {
+                validation = int.TryParse(Console.ReadLine(), out data);
+                if (validation == true)
+                    break;
+                Console.WriteLine("Please Enter the valid Input");
+
+            } while (!validation);
+            return data;
+        }
 
 
 
